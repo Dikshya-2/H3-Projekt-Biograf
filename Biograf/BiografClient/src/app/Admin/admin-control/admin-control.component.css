@@ -1,0 +1,15 @@
+
+.height {
+   margin-top: 0px;
+  display: flex;
+  justify-content: center; /* Horizontally center-align */
+  align-items: center; /* Vertically center-align */
+  height: 50vh; /* Adjust as needed */
+}
+
+.btn {
+  flex-direction: column;
+  margin: 7px;
+
+
+}

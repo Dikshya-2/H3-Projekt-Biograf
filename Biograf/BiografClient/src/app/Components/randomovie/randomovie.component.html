@@ -1,0 +1,19 @@
+
+
+<div class="height">
+  <div class="container">
+    <h1 class="blink">Welcome to the movie Page!</h1>
+    <div  *ngFor="let movie of filteredMovies">
+      <div *ngFor="let photo of photos">
+        <span class="card">
+          <img src="/assets/Image/{{photo.image}}" class="card-img-top h-100">
+          <div class="card-body">
+            <a routerLink='/movie/{{movie.id}}' class="btn btn-primary">{{movie.title|uppercase}}</a>
+          </div>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,64 @@
+<div class="text-white">
+
+  <button type="button" class="btn btn-primary" (click)="toggleCreateForm()">Create User</button>
+   <form *ngIf="showCreateForm" [formGroup]="Form" (ngSubmit)="create()">
+    <h2>User Form</h2>
+    <div class="formControl">
+      <label>FullName</label>
+      <input type="text" name="fullName" placeholder="Full Name" formControlName="fullName">
+      <small *ngIf="Form.get('fullName')?.invalid && Form.get('fullName')?.touched">Full Name is required</small>
+    </div>
+
+    <div class="formControl">
+      <label>Address</label>
+      <input type="text" name="address" placeholder="Address" formControlName="address">
+      <small *ngIf="Form.get('address')?.invalid && Form.get('address')?.touched">Address is required</small>
+    </div>
+
+    <div class="formControl">
+      <label>Email</label>
+      <input type="text" name="email" placeholder="Email" formControlName="email">
+      <small *ngIf="Form.get('email')?.invalid && Form.get('email')?.touched">Email is required</small>
+    </div>
+
+    <div class="formControl">
+      <label>Phone</label>
+      <input type="tel" name="phoneNumber" placeholder="Phone" formControlName="phoneNumber">
+      <small *ngIf="Form.get('phoneNumber')?.invalid && Form.get('phoneNumber')?.touched">Phone Number is required</small>
+    </div>
+
+    <div class="formControl">
+      <label>Role</label>
+      <input type="text" name="role" placeholder="Role" formControlName="role">
+      <small *ngIf="Form.get('role')?.invalid && Form.get('role')?.touched">Role is required</small>
+    </div>
+    <button class="btn" type="submit" [disabled]="!Form.valid">Save</button>
+  </form>
+
+  <div class="offset-2 col-8">
+    <a routerLink="/admin" class="w-25 btn btn-primary bg-primary"><i class="fa-solid fa-arrow-left-long"></i>Tilbage</a>
+  </div>
+  <table>
+    <tr>
+      <th scope="col-md">Id</th>
+      <th scope="col-md">FullName</th>
+      <th scope="col-md">Address</th>
+      <th scope="col-md">Email</th>
+      <th scope="col-md">Phone </th>
+      <th scope="col-md">Role</th>
+      <th scope="col-md">Action</th>
+    </tr>
+    <tr *ngFor="let object of users">
+      <td>{{object.id}}</td>
+      <td>{{object.fullName}}</td>
+      <td>{{object.address}}</td>
+      <td>{{object.email}}</td>
+      <td>{{object.phone}}</td>
+      <td>{{object.role}}</td>
+      <td>
+        <button class="btn btn-info" (click)="edit(object)"> <i class="fa fa-edit"></i></button>
+        <button class="btn btn-danger" (click)="delete(object.id)"> <i class="fa fa-trash"></i></button>
+      </td>
+    </tr>
+  </table>
+</div>

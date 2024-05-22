@@ -1,0 +1,42 @@
+ <div class="text-white">
+   <button type="button" class="btn btn-success" (click)="toggleCreateForm()">Create Author</button>
+    <form *ngIf="showCreateForm" [formGroup]="Form" (ngSubmit)="submitForm()">
+      <div class = "formControl">
+        <h1>Create Author</h1>
+        <input type="hidden" formControlName="id" />
+        <label> FullName</label>
+        <input type="text"  formControlName="name">
+       </div>
+
+       <div class = "formControl">
+         <label> Age</label>
+         <input type="text"  formControlName="age">
+        </div>
+        <button class="btn" [disabled]="!Form.valid"> Save</button>
+    </form>
+    <div class="offset-2 col-8">
+      <a routerLink="/admin" class="w-25 btn btn-primary bg-primary"><i class="fa-solid fa-arrow-left-long"></i>Tilbage</a>
+    </div>
+<table>
+  <h1>Author Details</h1>
+
+  <tr>
+  <th scope="col"> Id </th>
+  <th scope="col"> Name </th>
+  <th scope="col"> Age </th>
+  <th scope="col">Action</th>
+</tr>
+  <tr  *ngFor="let object of authors">
+    <td>{{object.id}} </td>
+    <td>{{object.name}}</td>
+    <td>{{object.age}}</td>
+    <td>
+      <button class="btn btn-info" (click)= "edit(object)"> <i class="fa fa-edit"></i></button>
+      <button class="btn btn-danger" (click)= "delete(object.id)"> <i class="fa fa-trash"></i></button>
+
+    </td>
+  </tr>
+
+
+</table>
+

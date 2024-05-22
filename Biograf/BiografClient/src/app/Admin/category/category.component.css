@@ -1,0 +1,51 @@
+
+
+/* Style the form inputs */
+.formControl {
+  margin-bottom: 15px; /* Add spacing below each form control */
+
+}
+form {
+  width: 45%; /* Adjusted width */
+  /* max-width: 400px; */
+  margin-left: 300px;
+  color:black;
+  background-color:white;
+  font-size: larger;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(96, 12, 12, 0.1);
+}
+
+/* Style the submit button */
+.btn-primary {
+  width: 100%; /* Make the button width 100% to fill the container */
+}
+table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 100px;
+}
+tr:nth-child(even) {
+  background-color: #7d1676;
+}
+tr:nth-child(odd) {
+  background-color: #11979e;
+}
+
+tr:hover {
+  background-color: #935a14;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px; /*  increase table size */
+  font-size: 18px;
+}
+
+th {
+  background-color: #218493;
+  text-align: left;
+}
+
+

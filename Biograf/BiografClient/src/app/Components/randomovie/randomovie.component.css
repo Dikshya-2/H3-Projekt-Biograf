@@ -1,0 +1,49 @@
+
+/* Clear floats after the columns */
+
+
+img {
+  max-width: 300%;
+  /* max-height: 450px; */
+}
+
+/* Style the counter cards */
+.card {
+  margin-top: 10px;
+  box-shadow: 0 4px 8px 0 rgba(185, 34, 34, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: whitesmoke;
+  float: left;
+  width: 370px;
+  height: 500px;
+  /* margin-right: 10px; */
+}
+
+/* Responsive columns */
+@media screen and (max-width: 700px) {
+  .column {
+    margin: auto;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 1s infinite;
+  color: rgb(40, 11, 152);
+  font-size: 34px;
+}
+

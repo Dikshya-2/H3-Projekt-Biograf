@@ -1,0 +1,6 @@
+<div class="button-container">
+  <H1 class="text-Black">Vælg Categegories</H1>
+  <div *ngFor="let category of categories">
+  <button type="button" class="btn btn-primary btn-lg"
+   (click)="btnClick(category.id)" routerLinkActive="router-link-active" > {{category.name}}</button>
+</div>

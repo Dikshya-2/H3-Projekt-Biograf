@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.button-container {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+.button-container h1 {
+  position: absolute;
+  left: -30%;
+}
+
+.button-container .btn {
+  margin: 5px;
+  height: 59px;
+  width: 170px; /* Ensures buttons have equal width */
+}

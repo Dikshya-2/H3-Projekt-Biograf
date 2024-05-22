@@ -1,0 +1,13 @@
+
+ <div class="container-fluid">
+  <div class="row">
+    <ng-container *ngFor="let item of movies">
+      <div class="card col-md-2">
+        <a routerLink="moviedetails/"> <img src="/assets/Image/{{item.photo}}" class="card-img-top h-300"></a>
+        <h3> {{item.title}}</h3>
+
+      </div>
+    </ng-container>
+
+  </div>
+</div>

@@ -1,0 +1,50 @@
+/* category-buttons.component.css */
+
+/* Example if you need custom styles */
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+}
+
+/* Additional styles if necessary */
+.button-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.button-container h1 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.button-container .btn {
+  margin: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button-container .btn:hover {
+  transform: scale(1.1);
+}

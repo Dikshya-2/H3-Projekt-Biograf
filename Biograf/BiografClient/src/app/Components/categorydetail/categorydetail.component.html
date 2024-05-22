@@ -1,0 +1,19 @@
+
+    <!-- <p>categorydetail works!</p> -->
+    <h1>{{ category.name | uppercase }}</h1>
+    <div *ngFor="let movie of movies">
+      <div *ngFor="let images of movie.photo">
+        <img src="/assets/Image/{{images.image }}" width="100" height="200">
+        <h1>{{movie.title}}</h1>
+      </div>
+      <h3><a [routerLink]="['movie', movie.id]">{{ movie.title | uppercase }}</a></h3>
+      <h3>Description:</h3>
+      <p>{{ movie.description }}</p>
+      <h3>Duration:</h3>
+      <p>{{ movie.duration }}</p>
+      <h3>ReleasedDate:</h3>
+      <p>{{ movie.releasedDate|date }}</p>
+    </div>
+
+    <!-- Display error message if there's an error -->
+    <p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>

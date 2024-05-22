@@ -1,0 +1,49 @@
+
+<div class="text-white">
+    <button type="button" class="btn btn-success" (click)="toggleCreateForm()">Create Actor</button>
+    <!-- <form *ngIf="showCreateForm" [formGroup]="Form" (ngSubmit)="submitForm()"> -->
+        <form *ngIf="showCreateForm" [formGroup]="Form" (ngSubmit)="submitForm()">
+
+
+      <h2>Create Actor</h2>
+    <div>
+      <!-- <input type="hidden" formControlName="id" /> -->
+      <label for="name">Name</label>
+      <input class="col-sm-2" type="text" id="name" formControlName="name" />
+    </div>
+
+    <div>
+      <label for="age">Age</label>
+      <input class="col-sm-2" type="text" id="age" formControlName="age" />
+
+    </div>
+    <button class="btn btn-info" type="submit" [disabled]="Form.invalid">Save</button>
+  </form>
+
+  <div class="offset-2 col-8">
+    <a routerLink="/admin" class="w-25 btn btn-primary bg-primary"><i class="fa-solid fa-arrow-left-long"></i>Tilbage</a>
+  </div>
+<table>
+  <h2>Actor Details</h2>
+
+  <tr>
+  <th scope="col-md"> Id </th>
+  <th scope="col-md"> Name </th>
+  <th scope="col-md"> Age </th>
+  <th scope="col-md">Action</th>
+</tr>
+
+  <tr  *ngFor="let actor of actors">
+    <td>{{actor.id}} </td>
+    <td>{{actor.name}}</td>
+    <td>{{actor.age}}</td>
+     <td>
+
+      <button class="btn btn-info" (click)= "edit(actor)"> <i class="fa fa-edit"></i></button>
+      <button class="btn btn-danger" (click)= "delete(actor.id)"> <i class="fa fa-trash"></i></button>
+    </td>
+  </tr>
+</table>
+<!-- </div>-->
+  </div>
+

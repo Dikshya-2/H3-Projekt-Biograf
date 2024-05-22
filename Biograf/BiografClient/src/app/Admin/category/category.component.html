@@ -1,0 +1,44 @@
+
+<div class="text-white">
+  <div class="row justify-content-center">
+    <div class="col-md-9">
+
+<button type="button" class="btn btn-success" (click)="toggleCreateForm()">Create</button>
+<form *ngIf="showCreateForm" [formGroup]="Form" (ngSubmit)="saveForm()">
+  <p>Create Category </p>
+  <div class = "formControl">
+    <label> Name</label>
+    <input class="col-sm-9" type="text"  formControlName="name">
+    <small>
+      <div *ngIf="Form.get('name')?.invalid && Form.get('name')?.touched">Name is required</div>
+    </small>
+  </div>
+  <button class="btn" type="submit" [disabled]="!Form.valid">Save</button>
+</form>
+<div class="offset-2 col-8">
+  <a routerLink="/admin" class="w-25 btn btn-primary bg-primary"><i class="fa-solid fa-arrow-left-long"></i>Tilbage</a>
+</div>
+<table>
+  <h2>Category Details </h2>
+  <tr>
+    <th scope="col-md"> Id </th>
+    <th scope="col-md"> Name </th>
+    <th scope="col-md"> Action </th>
+  </tr>
+  <tr *ngFor="let category of categories">
+    <td>{{ category.id }}</td>
+    <td>{{ category.name }}</td>
+    <td>
+      <!-- ngIf="category"  -->
+      <button class="btn btn-info" (click)= "edit(category)"> <i class="fa fa-edit"></i></button>
+      <button class="btn btn-danger" (click)= "delete(category.id)"> <i class="fa fa-trash"></i></button>
+
+    </td>
+  </tr>
+</table>
+
+</div>
+</div>
+</div>
+
+

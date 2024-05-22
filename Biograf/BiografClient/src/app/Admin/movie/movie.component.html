@@ -1,0 +1,80 @@
+
+<div class="text-white bg-black">
+  <button type="button" class="btn btn-primary" (click)="toggleCreateForm()">Create Movie</button>
+  <form *ngIf="showCreateForm" [formGroup]="Form" (ngSubmit)="create()">
+    <!-- <form *ngIf="showCreateForm" [formGroup]="Form" ([(ngModel)]="create")> -->
+
+
+<!-- <form [formGroup]="Form" (ngSubmit)="create()"> -->
+  <div class="formControl">
+    <label>Title</label>
+    <input type="text" name="name" placeholder="name" formControlName="title">
+    <small *ngIf="Form.get('title')?.invalid && Form.get('title')?.touched">Title is required</small>
+  </div>
+
+  <div class="formControl">
+    <label>Description</label>
+    <input type="text" name="description" placeholder="description"  formControlName="description" id="inputsm">
+    <small *ngIf="Form.get('description')?.invalid && Form.get('description')?.touched">Description is required</small>
+  </div>
+  <div class="formControl">
+    <label>Duration</label>
+    <input  type="text" name="duration" placeholder="duration" formControlName="duration">
+    <small *ngIf="Form.get('duration')?.invalid && Form.get('duration')?.touched">Duration is required</small>
+  </div>
+
+  <div class="formControl">
+    <label>Release Date</label>
+    <input type="date" name="date" placeholder="date" formControlName="releaseDate">
+    <small *ngIf="Form.get('releaseDate')?.invalid && Form.get('releaseDate')?.touched">Release Date is required</small>
+  </div>
+
+  <div>
+    <label> Category Name</label>
+    <select id="category" name="category" formControlName="categories">
+      <option *ngFor="let category of categories" [ngValue]="category">{{ category.name }}</option>
+    </select>
+  </div>
+ <!-- <div>
+     <label> CategoryId</label>
+    <select id="id" name="id" formControlName="id">
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.id }}</option>
+    </select>
+  </div> -->
+  <button class="btn" type="submit" [disabled]="!Form.valid">Save</button>
+</form>
+<div class="offset-2 col-8">
+  <a routerLink="/admin" class="w-25 btn btn-primary bg-primary"><i class="fa-solid fa-arrow-left-long"></i>Tilbage</a>
+</div>
+  <table>
+    <tr>
+    <th scope="col"> Id </th>
+    <th scope="col"> Title </th>
+    <th scope="col">Description</th>
+    <th scope="col">Duration</th>
+    <th scope="col">Releasedate</th>
+
+    <th scope="col">CategoryId</th>
+    <th scope="col">CategoryName</th>
+    <th scope="col">Action</th>
+
+    </tr>
+    <tr  *ngFor="let object of movies">
+    <td>{{object.id}} </td>
+    <td>{{object.title}}</td>
+    <td>{{object.description}}</td>
+    <td>{{object.duration}}</td>
+    <td>{{object.releasedDate |date:'mediumDate'}}</td>
+    <div  *ngFor="let item of object.categories">
+      <td >{{item.id}}</td>
+      <td>{{item.name}}</td>
+    </div>
+
+    <td>
+      <button class="btn btn-info" (click)= "edit(object)"> <i class="fa fa-edit"></i></button>
+      <button class="btn btn-danger" (click)= "delete(object.id)"> <i class="fa fa-trash"></i></button>
+    </td>
+    </tr>
+
+    </table>
+  </div>

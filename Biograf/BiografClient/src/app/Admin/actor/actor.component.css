@@ -1,0 +1,85 @@
+h1{
+  color: #218493;
+}
+form {
+  width: 45%; /* Adjusted width */
+  /* max-width: 400px; */
+  margin-left: 300px;
+  color:black;
+  background-color:white;
+  font-size: larger;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(96, 12, 12, 0.1);
+}
+
+label {
+  /* display: block; */
+  margin-bottom: 10px;
+  font-weight: bold;
+  /* box-shadow: #128394; */
+
+}
+
+input[type="text"] {
+  width: calc(50% - 30px);
+  padding: 8px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  border: 1px solid #333131;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+/* Button styles */
+.btn {
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  /* margin-right: 20; */
+}
+
+.btn:hover {
+  background-color: #bea725;
+}
+
+/* Table styles */
+table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin-left: 300px;
+  margin-top: 100px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #218493;
+  text-align: left;
+}
+
+/* Alternating row colors */
+tr:nth-child(even) {
+  background-color: #7d1676;
+}
+tr:nth-child(odd) {
+  background-color: #54961b;
+}
+tr:hover {
+  background-color: #935a14;
+}

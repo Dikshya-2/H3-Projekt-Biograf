@@ -1,0 +1,45 @@
+<div class="text-white">
+  <button type="button" class="btn btn-success" (click)="toggleCreateForm()">Create</button>
+  <form *ngIf="showCreateForm" [formGroup]="Form" (ngSubmit)="saveForm()">
+
+  <!-- <form [formGroup]="Form" action="" (ngSubmit)="saveForm()"> -->
+<div>
+  <input type="hidden" formControlName="id" />
+  <label> Name</label>
+  <input type="text" name="name" placeholder="name" formControlName="name">
+</div>
+
+<div>
+  <label> MovieId</label>
+  <select id="movieId" name="movieId" formControlName="movieId">
+     <option *ngFor="let movie of languages" [ngValue]="movie.movieId">{{ movie.movieId }}</option> <!-- id elle name what i wat to select -->
+     </select>
+</div>
+<button class="btn" type="submit" [disabled]="!Form.valid">Save</button>
+  <!-- <button type="submit">Save</button> -->
+</form>
+<div class="offset-2 col-8">
+  <a routerLink="/admin" class="w-25 btn btn-primary bg-primary"><i class="fa-solid fa-arrow-left-long"></i>Tilbage</a>
+</div>
+
+<table>
+  <h2>language Details!</h2>
+  <tr>
+  <th scope="col"> Id </th>
+  <th scope="col"> Name </th>
+  <th scope="col"> MovieId </th>
+   <th scope="col">Action</th>
+  </tr>
+  <tr  *ngFor="let object of languages">
+  <td>{{object.id}} </td>
+  <td>{{object.name}}</td>
+  <td>{{object.movieId}}</td>
+  <td>
+    <button class="btn btn-info" (click)= "edit(object)"> <i class="fa fa-edit"></i></button>
+      <button class="btn btn-danger" (click)= "delete(object.id)"> <i class="fa fa-trash"></i></button>
+
+  </td>
+  </tr>
+  </table>
+</div>
+
